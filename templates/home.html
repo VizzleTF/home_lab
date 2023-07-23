@@ -38,6 +38,12 @@
                 {% else %}
                     <input type="submit" class="glow-on-hover red" value="AdGuard" name="action3"/>
                 {% endif %}
+
+                {% if nginx %}
+                    <input type="submit" class="glow-on-hover green" value="Proxy" name="action1"/>
+                {% else %}
+                    <input type="submit" class="glow-on-hover red" value="Proxy" name="action3"/>
+                {% endif %}
             </form>
         </div>
 

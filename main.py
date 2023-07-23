@@ -20,6 +20,11 @@ def home():
     else:
         nextcloud = False
 
+    if proxmox.vmstatus(104) == 'running':
+        nginx = True
+    else:
+        nginx = False
+
     if request.method == 'POST':
         if request.form.get('action1') == 'AdGuard':
             proxmox.vmreset(103)
@@ -29,6 +34,10 @@ def home():
             proxmox.vmreset(100)
         elif request.form.get('action3') == 'AdGuard':
             proxmox.vmstart(103)
+        elif request.form.get('action1') == 'Proxy':
+            proxmox.vmreset(104)
+        elif request.form.get('action3') == 'Proxy':
+            proxmox.vmstart(104)
         elif request.form.get('action3') == 'Plex':
             proxmox.vmstart(101)
         elif request.form.get('action3') == 'Nextcloud':
@@ -39,7 +48,7 @@ def home():
             keenetic.piholeon()
 
 
-    return render_template('home.html', adguard=adguard, plex=plex, nextcloud=nextcloud)
+    return render_template('home.html', nginx=nginx, adguard=adguard, plex=plex, nextcloud=nextcloud)
 
 if __name__ == '__main__':
     app.run(port='80')
