@@ -1,0 +1,5 @@
+VMs status: 
+pihole: running 
+ubuntu-2204-cloudinit-template: stopped 
+plex: running 
+nextcloud: running 
