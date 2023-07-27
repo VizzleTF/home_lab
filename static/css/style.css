@@ -37,7 +37,7 @@ h2 {
     float: left;
     font-size: 150%;
 	margin: 1vw;
-    width: 13.5vw;
+    width: 13.7vw;
     height: 50px;
     border: none;
     outline: none;
@@ -129,8 +129,10 @@ h2 {
 
 .red {
     background: linear-gradient(to right, #7a2828 0%, #a73737 100%);
+    width: 12.5vw;
 }
 
 .green {
     background: linear-gradient(to right, #0c791b 0%, #61d559 100%);
+    width: 12.5vw;
 }
