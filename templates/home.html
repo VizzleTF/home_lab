@@ -2,10 +2,18 @@
 <html>
     <link rel="stylesheet" type= "text/css" href="/static/css/style.css">
     <link rel="icon" type="image/png" href="/static/favicon.png"/>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <header>
         HOME LAB
     </header>
     <body>
+        <script>
+            $(document).ready(function(){
+                setInterval(function (){
+                    $("#autorefresh").load(window.location.href + "autorefresh");
+                }, 3000);
+            });
+        </script>
         <div class="container flat cont">
             <h1> Ссылки </h1>
             <div class="container flat flex">
@@ -18,7 +26,7 @@
             </div>
         </div>
 
-        <div class="container cont">
+        <div id="autorefresh" class="container cont">
             <h1> Статус ВМ</h1>
             <h2> (нажми для перезагрузки)</h2>
             <form class="container small" method="post" action="/">
