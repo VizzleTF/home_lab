@@ -7,13 +7,16 @@
         HOME LAB
     </header>
     <body>
+
         <script>
             $(document).ready(function(){
+                $('#autorefresh').load("containers.html")
                 setInterval(function (){
-                    $("#autorefresh").load(window.location.href + "autorefresh");
+                    $('#autorefresh').load("containers.html");
                 }, 3000);
             });
         </script>
+
         <div class="container flat cont">
             <h1> Ссылки </h1>
             <div class="container flat flex">
@@ -26,35 +29,7 @@
             </div>
         </div>
 
-        <div id="autorefresh" class="container cont">
-            <h1> Статус ВМ</h1>
-            <h2> (нажми для перезагрузки)</h2>
-            <form class="container small" method="post" action="/">
-                {% if plex %}
-                    <input type="submit" class="glow-on-hover green" value="Plex" name="action1"/>
-                {% else %}
-                    <input type="submit" class="glow-on-hover red" value="Plex" name="action3"/>
-                {% endif %}
-
-                {% if nextcloud %}
-                    <input type="submit" class="glow-on-hover green" value="Nextcloud" name="action1"/>
-                {% else %}
-                    <input type="submit" class="glow-on-hover red" value="Nextcloud" name="action3"/>
-                {% endif %}
-
-                {% if adguard %}
-                    <input type="submit" class="glow-on-hover green" value="AdGuard" name="action1"/>
-                {% else %}
-                    <input type="submit" class="glow-on-hover red" value="AdGuard" name="action3"/>
-                {% endif %}
-
-                {% if nginx %}
-                    <input type="submit" class="glow-on-hover green" value="Proxy" name="action1"/>
-                {% else %}
-                    <input type="submit" class="glow-on-hover red" value="Proxy" name="action3"/>
-                {% endif %}
-            </form>
-        </div>
+        <div id="autorefresh" class="container cont"></div>
 
         <div class="container cont">
             <h1> DNS сервера </h1>

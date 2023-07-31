@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    return render_template('home.html')
+
+@app.route('/containers.html', methods=['GET', 'POST'])
+def containers():
     if proxmox.vmstatus(103) == 'running':
         adguard = True
     else:
@@ -48,7 +52,7 @@ def home():
             keenetic.piholeon()
 
 
-    return render_template('home.html', nginx=nginx, adguard=adguard, plex=plex, nextcloud=nextcloud)
+    return render_template('containers.html', nginx=nginx, adguard=adguard, plex=plex, nextcloud=nextcloud)
 
 if __name__ == '__main__':
     app.run(port='80')
