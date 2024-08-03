@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type= "text/css" href="/static/css/style.css">
-    <link rel="icon" type="image/png" href="/static/favicon.png"/>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <header>
-        HOME LAB
-    </header>
-    <body>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<link rel="icon" type="image/png" href="/static/favicon.png" />
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<header>
+    HOME LAB
+</header>
 
-        <script>
-            $(document).ready(function(){
-                $('#autorefresh').load("containers.html")
-                setInterval(function (){
-                    $('#autorefresh').load("containers.html");
-                }, 3000);
-            });
-        </script>
+<body>
 
-        <div class="container flat cont">
-            <h1> Ссылки </h1>
-            <div class="container flat flex">
-                <button onclick=window.open('http://10.11.12.15:8112/'); class="glow-on-hover" type="button">Торрент</button>
-                <button onclick=window.open('http://10.11.12.15:32400/web/index.html#!/'); class="glow-on-hover" type="button">Плеер</button>
-                <button onclick=window.open('http://10.11.12.1/dashboard'); class="glow-on-hover" type="button">Роутер</button>
-                <button onclick=window.open('http://10.11.12.17'); class="glow-on-hover" type="button">AdGuard</button>
-                <button onclick=window.open('https://10.11.12.13:8006/#v1:0:18:4:::::::'); class="glow-on-hover" type="button">Proxmox</button>
-                <button onclick=window.open('http://10.11.12.13'); class="glow-on-hover" type="button">Klipper</button>
-            </div>
+    <script>
+        $(document).ready(function () {
+            $('#autorefresh').load("containers.html")
+            setInterval(function () {
+                $('#autorefresh').load("containers.html");
+            }, 3000);
+        });
+    </script>
+
+    <div class="container flat cont">
+        <h1> Ссылки </h1>
+        <div class="container flat flex">
+            <button onclick=window.open('http://10.11.12.15:8112/'); class="glow-on-hover blue"
+                type="button">Торрент</button>
+            <button onclick=window.open('http://10.11.12.15:32400/web/index.html#!/'); class="glow-on-hover blue"
+                type="button">Плеер</button>
+            <button onclick=window.open('http://10.11.12.1/dashboard'); class="glow-on-hover blue"
+                type="button">Роутер</button>
+            <button onclick=window.open('http://10.11.12.17'); class="glow-on-hover blue" type="button">AdGuard</button>
+            <button onclick=window.open('https://10.11.12.13:8006/#v1:0:18:4:::::::'); class="glow-on-hover blue"
+                type="button">Proxmox</button>
+            <button onclick=window.open('http://10.11.12.13'); class="glow-on-hover blue" type="button">Klipper</button>
         </div>
+    </div>
 
-        <div id="autorefresh" class="container cont"></div>
+    <div class="container flat cont">
+        <h1> VMs </h1>
+        <div id="autorefresh" class="container flat flex"></div>
+    </div>
+</body>
 
-        <div class="container cont">
-            <h1> DNS сервера </h1>
-            <form class="container small" method="post" action="/">
-                <input type="submit" class="glow-on-hover red" value="Провайдера" name="action2"/>
-                <input type="submit" class="glow-on-hover green" value="AdGuard" name="action2"/>
-            </form>
-        </div>
-    </body>
 </html>
