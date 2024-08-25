@@ -1,4 +1,4 @@
-# Web App Home Lab
+# [Web App Home Lab](https://github.com/VizzleTF/home_lab)
 
 This is a web application for managing Proxmox virtual machines. It provides a simple interface to view and control VMs hosted on a Proxmox server.
 
